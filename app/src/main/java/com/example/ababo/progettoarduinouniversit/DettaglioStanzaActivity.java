@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 import com.example.ababo.progettoarduinouniversit.datamodel.Stanza;
 
-@SuppressLint("Registered")
+
 public class DettaglioStanzaActivity extends AppCompatActivity {
     TextView vCasa;
     Button bCasa1;
@@ -23,7 +23,7 @@ public class DettaglioStanzaActivity extends AppCompatActivity {
         bCasa2 = findViewById(R.id.buttonCasa2);
 
         Intent intent = getIntent();
-        Stanza stanza = (Stanza) intent.getSerializableExtra("stanza");
+        Stanza stanza = (Stanza)intent.getSerializableExtra("stanza");
         if (stanza != null) {
             vCasa.setText(stanza.getNome());
             bCasa1.setTransitionName("ciao");
