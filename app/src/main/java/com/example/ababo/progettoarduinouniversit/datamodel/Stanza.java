@@ -1,6 +1,8 @@
 package com.example.ababo.progettoarduinouniversit.datamodel;
 
-public class Stanza {
+import java.io.Serializable;
+
+public class Stanza implements Serializable {
     // Attributi
     private String matricola;
     private String cognome;
