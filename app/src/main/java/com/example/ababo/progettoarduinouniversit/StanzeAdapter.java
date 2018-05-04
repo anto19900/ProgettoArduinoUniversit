@@ -63,4 +63,9 @@ public class StanzeAdapter extends BaseAdapter {
         return view;
     }
 
+    public void setElencoStanze(List<Stanza> elencoStanze) {
+        this.elencoStanze = elencoStanze;
+        notifyDataSetChanged();
+    }
+
 }

@@ -32,7 +32,7 @@ public class DataSource {
      * Aggiunge un studente
      * @param Stanza studente da aggiungere
      */
-    public void addStudente(Stanza stanza) {
+    public void addStanza(Stanza stanza) {
         elencoStanze.put(stanza.getMatricola(), stanza);
     }
 
@@ -40,7 +40,7 @@ public class DataSource {
      * Elimina uno studente
      * @param matricola matricola da eliminare
      */
-    public void deleteStudente(String matricola) {
+    public void deleteStanza(String matricola) {
         elencoStanze.remove(matricola);
     }
 
@@ -49,7 +49,7 @@ public class DataSource {
      * @param matricola matricola da cercare
      * @return Studente trovoto (null in caso contrario)
      */
-    public Stanza getStudente(String matricola) {
+    public Stanza getStanza(String matricola) {
         return elencoStanze.get(matricola);
     }
 
@@ -58,7 +58,7 @@ public class DataSource {
      * @param prefissoMatricola prefisso da cercare
      * @return elenco studenti trovato
      */
-    public List<Stanza> getElencoStudenti(String prefissoMatricola) {
+    public List<Stanza> getElencoStanze(String prefissoMatricola) {
 
         ArrayList<Stanza> risultato = new ArrayList<Stanza>();
 
