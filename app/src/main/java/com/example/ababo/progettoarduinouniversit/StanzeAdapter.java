@@ -52,7 +52,7 @@ public class StanzeAdapter extends BaseAdapter {
 
         // Ottengo gli ID correnti
         TextView vMatricola = view.findViewById(R.id.textMatricola);
-        TextView vNomeCompleto = view.findViewById(R.id.textView);
+        TextView vNomeCompleto = view.findViewById(R.id.textNome);
 
         // Imposto i valori da visualizzare
         Stanza s = elencoStanze.get(i);
