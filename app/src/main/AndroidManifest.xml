@@ -17,6 +17,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".DettaglioStanzaActivity" />
+        <activity android:name=".EditStanzaActivity" />
     </application>
 
 </manifest>

@@ -31,7 +31,7 @@ public class EditStanzaActivity extends AppCompatActivity {
 
         if (stanza != null ){
             vMatricola.setText(stanza.getMatricola());
-            vDispositivi.setText(Integer.toString(stanza.getDispositivi()));
+            //vDispositivi.setText(Integer.toString(stanza.getDispositivi()));
             vNome.setText(stanza.getNome());
 
         }
@@ -65,7 +65,11 @@ public class EditStanzaActivity extends AppCompatActivity {
         Stanza stanza = new Stanza();
         stanza.setMatricola(vMatricola.getText().toString());
         stanza.setNome(vNome.getText().toString());
-        stanza.setCognome(vDispositivi.toString());
+        /*try {
+            stanza.setDispositivi(Integer.parseInt(vDispositivi.getText().toString()));
+        } catch (Exception e) {
+            stanza.setDispositivi(0);
+        }*/
 
         return stanza;
 

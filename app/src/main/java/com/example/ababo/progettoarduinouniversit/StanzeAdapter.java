@@ -33,7 +33,7 @@ public class StanzeAdapter extends BaseAdapter {
 
     // Invocato per ottenere l'iesimo elemento
     @Override
-    public Object getItem(int i) {
+    public Stanza getItem(int i) {
         return elencoStanze.get(i);
     }
 
