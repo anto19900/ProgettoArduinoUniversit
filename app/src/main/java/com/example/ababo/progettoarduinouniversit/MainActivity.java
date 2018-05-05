@@ -3,16 +3,19 @@ package com.example.ababo.progettoarduinouniversit;
 import android.content.Intent;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.ContextMenu;
+import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.Toast;
+
+
 
 import com.example.ababo.progettoarduinouniversit.datamodel.DataSource;
 import com.example.ababo.progettoarduinouniversit.datamodel.Stanza;
@@ -39,6 +42,9 @@ public class MainActivity extends AppCompatActivity {
             // Ottengo i riferimenti alle view
             vAggiungi = findViewById(R.id.fabAggiungi);
             vListaStanze = findViewById(R.id.listaStanze);
+            Toolbar toolbar = findViewById(R.id.toolbar);
+            setSupportActionBar(toolbar);
+
             getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
 
             // Ottengo un riferimento al datasource
@@ -76,8 +82,34 @@ public class MainActivity extends AppCompatActivity {
                 registerForContextMenu(vListaStanze);
         }
 
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.toolbar, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+    public boolean onOptionsItemSelected(MenuItem item) {
 
+        // Switch per individuare la voce di menu scelta
+        switch (item.getItemId()) {
 
+            case R.id.menuGrafici:
+                // L'utente ha scelto "impostazioni"
+                Log.v(TAG, "Menu-> grafici");
+                Intent intent2 = new Intent(MainActivity.this,GraficiActivity.class);
+                startActivity(intent2);
+                return true;
+
+            case R.id.menuImpostazioni:
+                // L'utente ha scelto "logout"
+                Log.v(TAG, "Menu-> impostazioni");
+                Intent intent3 = new Intent(MainActivity.this,ImpostazioniActivity.class);
+                startActivity(intent3);
+                return true;
+
+            default:
+                // Scelta non riconosciuta, passo il controllo al metodo della classe base
+                return super.onOptionsItemSelected(item);
+        }
+    }
 
 
     // Processo dei valori di ritorno dalle altre activiy
