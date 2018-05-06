@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -10,15 +9,13 @@
         android:id="@+id/tNome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="38dp"
-        android:layout_marginEnd="17dp"
-        android:layout_marginStart="152dp"
-        android:layout_marginTop="46dp"
+        android:layout_marginEnd="16dp"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Nome"
+        android:hint="Nome"
+        android:inputType="textPersonName|date"
         app:layout_constraintBottom_toTopOf="@+id/tMatricola"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -26,15 +23,13 @@
         android:id="@+id/tMatricola"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="23dp"
-        android:layout_marginEnd="17dp"
-        android:layout_marginStart="152dp"
-        android:layout_marginTop="37dp"
+        android:layout_marginEnd="16dp"
         android:ems="10"
+        android:hint="Codice univoco"
         android:inputType="textPersonName"
-        android:text="Codice univoco"
         app:layout_constraintBottom_toTopOf="@+id/tDispositivi"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tNome" />
 
@@ -42,14 +37,13 @@
         android:id="@+id/tDispositivi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="17dp"
-        android:layout_marginStart="152dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginEnd="16dp"
         android:ems="10"
+        android:hint="N* dispositivi"
         android:inputType="textPersonName"
-        android:text="N* dispositivi"
         app:layout_constraintBottom_toTopOf="@+id/tAltro"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tMatricola" />
 
@@ -57,14 +51,14 @@
         android:id="@+id/tAltro"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="28dp"
-        android:layout_marginEnd="17dp"
-        android:layout_marginStart="152dp"
+        android:layout_marginEnd="16dp"
         android:ems="10"
+        android:hint="vuoto"
         android:inputType="textPersonName"
-        android:text="vuoto"
+        android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@+id/bAnnulla"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tDispositivi" />
 
@@ -72,23 +66,24 @@
         android:id="@+id/bOk"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="102dp"
+        android:layout_marginBottom="56dp"
         android:layout_marginEnd="94dp"
         android:layout_marginStart="50dp"
-        android:layout_marginTop="361dp"
+        android:layout_marginTop="56dp"
         android:text="OK"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/bAnnulla"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/tAltro" />
 
     <Button
         android:id="@+id/bAnnulla"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="64dp"
+        android:layout_marginStart="94dp"
         android:text="ANNULLA"
-        app:layout_constraintBaseline_toBaselineOf="@+id/bOk"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/bOk" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/bOk"
+        app:layout_constraintTop_toBottomOf="@+id/tAltro" />
+
 </android.support.constraint.ConstraintLayout>

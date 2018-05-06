@@ -88,4 +88,8 @@
 
     <string name="id_fmt">User ID: %s</string>
     <string name="email_fmt">Email: %s</string>
+    <string name="invitation_message">MESSAGGIO DI INVITO</string>
+    <string name="invitation_deep_link">l\'invito non è andato a buon fine</string>
+    <string name="invitation_customimage">immagine customizzata</string>
+    <string name="invitation_cta">invitation cta</string>
 </resources>
