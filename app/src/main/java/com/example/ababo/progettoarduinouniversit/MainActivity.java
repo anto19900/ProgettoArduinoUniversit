@@ -43,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
             vAggiungi = findViewById(R.id.fabAggiungi);
             vListaStanze = findViewById(R.id.listaStanze);
             Toolbar toolbar = findViewById(R.id.toolbar);
+
             setSupportActionBar(toolbar);
 
             getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
