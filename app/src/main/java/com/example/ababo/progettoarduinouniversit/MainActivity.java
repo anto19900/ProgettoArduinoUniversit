@@ -105,6 +105,13 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent3);
                 return true;
 
+            case R.id.menuLog:
+                // L'utente ha scelto "logout"
+                Log.v(TAG, "Menu-> Log-in");
+                Intent intent4 = new Intent(MainActivity.this,LoginActivity.class);
+                startActivity(intent4);
+                return true;
+
             default:
                 // Scelta non riconosciuta, passo il controllo al metodo della classe base
                 return super.onOptionsItemSelected(item);
