@@ -43,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
             vAggiungi = findViewById(R.id.fabAggiungi);
             vListaStanze = findViewById(R.id.listaStanze);
             Toolbar toolbar = findViewById(R.id.toolbar);
+
             setSupportActionBar(toolbar);
 
             getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
@@ -103,6 +104,13 @@ public class MainActivity extends AppCompatActivity {
                 Log.v(TAG, "Menu-> impostazioni");
                 Intent intent3 = new Intent(MainActivity.this,ImpostazioniActivity.class);
                 startActivity(intent3);
+                return true;
+
+            case R.id.menuLog:
+                // L'utente ha scelto "logout"
+                Log.v(TAG, "Menu-> Log-in");
+                Intent intent4 = new Intent(MainActivity.this,LoginActivity.class);
+                startActivity(intent4);
                 return true;
 
             default:
