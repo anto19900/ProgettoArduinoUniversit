@@ -1,5 +1,6 @@
 package com.example.ababo.progettoarduinouniversit;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -118,6 +119,7 @@ public class LoginActivity extends BaseActivity implements
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "signInWithEmail:success");
                             FirebaseUser user = mAuth.getCurrentUser();
+                            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                             updateUI(user);
                         } else {
                             // If sign in fails, display a message to the user.
