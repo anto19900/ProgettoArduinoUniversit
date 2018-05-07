@@ -109,8 +109,8 @@ public class MainActivity extends AppCompatActivity {
             case R.id.menuLog:
                 // L'utente ha scelto "logout"
                 Log.v(TAG, "Menu-> Log-in");
-                Intent intent4 = new Intent(MainActivity.this,LoginActivity.class);
-                startActivity(intent4);
+               // Intent intent4 = new Intent(MainActivity.this,LoginActivity.class);
+                //startActivity(intent4);
                 return true;
 
             default:
