@@ -57,7 +57,7 @@ public class StanzeAdapter extends BaseAdapter {
         // Imposto i valori da visualizzare
         Stanza s = elencoStanze.get(i);
         vMatricola.setText(s.getMatricola());
-        vNomeCompleto.setText(s.getCognome() + " " + s.getNome());
+        //vNomeCompleto.setText(s.getCognome() + " " + s.getNome());
 
         // Restituisco la view alla lista
         return view;

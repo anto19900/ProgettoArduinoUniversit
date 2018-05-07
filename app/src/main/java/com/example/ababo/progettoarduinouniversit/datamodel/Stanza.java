@@ -5,7 +5,7 @@ import java.io.Serializable;
 public class Stanza implements Serializable {
     // Attributi
     private String matricola;
-    private String cognome;
+   //private String cognome;
     private String nome;
     private int dispositivi;
 
@@ -14,7 +14,7 @@ public class Stanza implements Serializable {
 
     public Stanza(String matricola, String cognome, String nome, int dispositivi) {
         this.matricola = matricola;
-        this.cognome = cognome;
+        //this.cognome = cognome;
         this.nome = nome;
         this.dispositivi = dispositivi;
     }
@@ -27,13 +27,13 @@ public class Stanza implements Serializable {
         this.matricola = matricola;
     }
 
-    public String getCognome() {
+   /* public String getCognome() {
         return cognome;
-    }
+    }*/
 
-    public void setCognome(String cognome) {
+    /*public void setCognome(String cognome) {
         this.cognome = cognome;
-    }
+    }*/
 
     public String getNome() {
         return nome;
