@@ -41,9 +41,9 @@ public class DataSource {
      * Elimina uno studente
      * @param matricola matricola da eliminare
      */
-    public void deleteStanza(Stanza stanza) {
-        //elencoStanze.remove(stanza);
-        elencoStanze.remove(stanza.getMatricola(), stanza);
+    public void deleteStanza(String matricola) {
+        elencoStanze.remove(matricola);
+
     }
 
     /**
