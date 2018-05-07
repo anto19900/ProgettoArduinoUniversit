@@ -20,7 +20,7 @@ import android.widget.ListView;
 import com.example.ababo.progettoarduinouniversit.datamodel.DataSource;
 import com.example.ababo.progettoarduinouniversit.datamodel.Stanza;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity   {
 
 
     private static final String TAG = "Lista stanze";
@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
         private ListView vListaStanze;
         private final int REQ_ADD_STUDENTE = 1;
         private final int REQ_EDIT_STUDENTE = 2;
+        private String matricolaCorrente;
     private final String EXTRA_STUDENTE = "stanza";
     private FloatingActionButton vAggiungi;
     // Adapter e data source
@@ -43,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
             vAggiungi = findViewById(R.id.fabAggiungi);
             vListaStanze = findViewById(R.id.listaStanze);
             Toolbar toolbar = findViewById(R.id.toolbar);
+
 
             setSupportActionBar(toolbar);
 
@@ -108,9 +110,12 @@ public class MainActivity extends AppCompatActivity {
 
             case R.id.menuLog:
                 // L'utente ha scelto "logout"
-                Log.v(TAG, "Menu-> Log-in");
-               // Intent intent4 = new Intent(MainActivity.this,LoginActivity.class);
-                //startActivity(intent4);
+                Log.v(TAG, "Menu-> Log-out");
+
+               Intent intent4 = new Intent(MainActivity.this,LoginActivity.class);
+               
+               startActivity(intent4);
+
                 return true;
 
             default:
@@ -148,7 +153,7 @@ public class MainActivity extends AppCompatActivity {
 
                     if (stanza != null) {
                         // Sostituisco lo studente nel datasource
-                        dataSource.deleteStanza("");
+                        dataSource.deleteStanza(matricolaCorrente);
                         dataSource.addStanza(stanza);
                         // Imposto il nuovo set di dati
                         adapter.setElencoStanze(dataSource.getElencoStanze(""));
@@ -187,7 +192,7 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.modificamMenu:
                     // Modifica studente. Chiedo lo studente all'adapter e lo passo all'altra activiy
                     Stanza stanza = adapter.getItem(info.position);
-                   // matricolaCorrente = stanza.getMatricola();    // Salvo la matricola per poterla eventualmente modificare
+                     matricolaCorrente = stanza.getMatricola();    // Salvo la matricola per poterla eventualmente modificare
                     Intent intent = new Intent(getApplicationContext(), EditStanzaActivity.class);
                      intent.putExtra(EXTRA_STUDENTE, stanza );
                     // Faccio partire l'activiy in modalità edit

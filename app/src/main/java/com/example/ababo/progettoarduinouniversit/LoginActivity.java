@@ -32,7 +32,7 @@ public class LoginActivity extends BaseActivity implements
     private EditText mPasswordField;
 
     // [START declare_auth]
-    private FirebaseAuth mAuth;
+     private FirebaseAuth mAuth;
     // [END declare_auth]
 
     @Override
@@ -56,6 +56,8 @@ public class LoginActivity extends BaseActivity implements
         // [START initialize_auth]
         mAuth = FirebaseAuth.getInstance();
         // [END initialize_auth]
+
+
     }
 
     // [START on_start_check_user]
@@ -65,6 +67,10 @@ public class LoginActivity extends BaseActivity implements
         // Check if user is signed in (non-null) and update UI accordingly.
         FirebaseUser currentUser = mAuth.getCurrentUser();
         updateUI(currentUser);
+   if(!currentUser.isAnonymous()) {
+       Intent intent = new Intent(LoginActivity.this,MainActivity.class);
+       startActivity(intent);
+   }
     }
     // [END on_start_check_user]
 
@@ -141,7 +147,7 @@ public class LoginActivity extends BaseActivity implements
         // [END sign_in_with_email]
     }
 
-    private void signOut() {
+     void signOut() {
         mAuth.signOut();
         updateUI(null);
     }

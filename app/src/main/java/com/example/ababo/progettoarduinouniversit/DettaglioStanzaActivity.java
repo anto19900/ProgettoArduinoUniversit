@@ -21,13 +21,15 @@ public class DettaglioStanzaActivity extends AppCompatActivity {
         vCasa = findViewById(R.id.tCasaSpecifica);
         bCasa1 = findViewById(R.id.buttonCasa1);
         bCasa2 = findViewById(R.id.buttonCasa2);
-
+        TextView vDispositivi2 = findViewById(R.id.tDispositivi);
+        TextView tMatricola = findViewById(R.id.tMatricolaDettaglio);
         Intent intent = getIntent();
         Stanza stanza = (Stanza)intent.getSerializableExtra("stanza");
         if (stanza != null) {
             vCasa.setText(stanza.getNome());
-            bCasa1.setTransitionName("ciao");
-            bCasa2.setTransitionName("come va");
+            tMatricola.setText(stanza.getMatricola());
+            vDispositivi2.setText(String.valueOf(stanza.getDispositivi()));
+
             //qui altre cose da passare tipo pulsante
         }
 
