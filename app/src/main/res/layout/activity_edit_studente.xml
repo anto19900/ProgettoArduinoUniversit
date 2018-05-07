@@ -37,30 +37,16 @@
         android:id="@+id/tDispositivi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
         android:layout_marginEnd="16dp"
         android:ems="10"
         android:hint="N* dispositivi"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/tAltro"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tMatricola" />
-
-    <EditText
-        android:id="@+id/tAltro"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:ems="10"
-        android:hint="vuoto"
-        android:inputType="textPersonName"
-        android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@+id/bAnnulla"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tDispositivi" />
+        app:layout_constraintTop_toBottomOf="@+id/tMatricola" />
 
     <Button
         android:id="@+id/bOk"
@@ -69,21 +55,19 @@
         android:layout_marginBottom="56dp"
         android:layout_marginEnd="94dp"
         android:layout_marginStart="50dp"
-        android:layout_marginTop="56dp"
         android:text="OK"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/bAnnulla"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tAltro" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/bAnnulla"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="56dp"
         android:layout_marginStart="94dp"
         android:text="ANNULLA"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/bOk"
-        app:layout_constraintTop_toBottomOf="@+id/tAltro" />
+        app:layout_constraintStart_toEndOf="@+id/bOk" />
 
 </android.support.constraint.ConstraintLayout>
