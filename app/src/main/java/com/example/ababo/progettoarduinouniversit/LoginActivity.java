@@ -67,10 +67,11 @@ public class LoginActivity extends BaseActivity implements
         // Check if user is signed in (non-null) and update UI accordingly.
         FirebaseUser currentUser = mAuth.getCurrentUser();
         updateUI(currentUser);
-   if(!currentUser.isAnonymous()) {
-       Intent intent = new Intent(LoginActivity.this,MainActivity.class);
-       startActivity(intent);
-   }
+    if(currentUser != null){
+
+        Intent intent = new Intent(LoginActivity.this,MainActivity.class);
+        startActivity(intent);
+    }
     }
     // [END on_start_check_user]
 
@@ -125,9 +126,9 @@ public class LoginActivity extends BaseActivity implements
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "signInWithEmail:success");
                             FirebaseUser user = mAuth.getCurrentUser();
-                            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                            startActivity(intent);
                             updateUI(user);
+                            Intent intent2 = new Intent(LoginActivity.this,MainActivity.class);
+                            startActivity(intent2);
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "signInWithEmail:failure", task.getException());
@@ -239,6 +240,10 @@ public class LoginActivity extends BaseActivity implements
         } else if (i == R.id.verify_email_button) {
             sendEmailVerification();
         }
+    }
+    public void signOut2() {
+        mAuth.signOut();
+        updateUI(null);
     }
 }
 

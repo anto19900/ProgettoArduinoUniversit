@@ -112,9 +112,9 @@ public class MainActivity extends AppCompatActivity   {
                 // L'utente ha scelto "logout"
                 Log.v(TAG, "Menu-> Log-out");
 
-               Intent intent4 = new Intent(MainActivity.this,LoginActivity.class);
-               
-               startActivity(intent4);
+                Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+                startActivityForResult(intent, 3);
+
 
                 return true;
 
