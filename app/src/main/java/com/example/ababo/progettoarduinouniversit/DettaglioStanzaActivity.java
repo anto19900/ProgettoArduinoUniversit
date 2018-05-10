@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -25,6 +26,8 @@ public class DettaglioStanzaActivity extends AppCompatActivity {
         TextView tMatricola = findViewById(R.id.tMatricolaDettaglio);
         Intent intent = getIntent();
         Stanza stanza = (Stanza)intent.getSerializableExtra("stanza");
+        Toolbar toolbar3 = findViewById(R.id.toolbar5);
+        setSupportActionBar(toolbar3);
         if (stanza != null) {
             vCasa.setText(stanza.getNome());
             tMatricola.setText(stanza.getMatricola());

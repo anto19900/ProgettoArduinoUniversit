@@ -25,7 +25,7 @@ public class LoginActivity extends BaseActivity implements
         View.OnClickListener {
 
     private static final String TAG = "EmailPassword";
-
+    FirebaseUser currentUser;
     private TextView mStatusTextView;
     private TextView mDetailTextView;
     private EditText mEmailField;
@@ -65,8 +65,9 @@ public class LoginActivity extends BaseActivity implements
     public void onStart() {
         super.onStart();
         // Check if user is signed in (non-null) and update UI accordingly.
-        FirebaseUser currentUser = mAuth.getCurrentUser();
+         currentUser = mAuth.getCurrentUser();
         updateUI(currentUser);
+
     if(currentUser != null){
 
         Intent intent = new Intent(LoginActivity.this,MainActivity.class);

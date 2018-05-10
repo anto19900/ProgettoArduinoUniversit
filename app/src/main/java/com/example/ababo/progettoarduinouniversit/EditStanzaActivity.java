@@ -3,6 +3,7 @@ package com.example.ababo.progettoarduinouniversit;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -25,7 +26,8 @@ public class EditStanzaActivity extends AppCompatActivity {
         vDispositivi = findViewById(R.id.tDispositivi);
         vOk = findViewById(R.id.bOk);
         vCancel = findViewById(R.id.bAnnulla);
-
+        Toolbar toolbar3 = findViewById(R.id.toolbar4);
+        setSupportActionBar(toolbar3);
         final Intent intent = getIntent();
         Stanza stanza = (Stanza)intent.getSerializableExtra("stanza");
 

@@ -19,6 +19,7 @@ import android.widget.ListView;
 
 import com.example.ababo.progettoarduinouniversit.datamodel.DataSource;
 import com.example.ababo.progettoarduinouniversit.datamodel.Stanza;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity   {
 
@@ -26,6 +27,7 @@ public class MainActivity extends AppCompatActivity   {
     private static final String TAG = "Lista stanze";
     // Riferimenti alle view
         private ListView vListaStanze;
+    private FirebaseAuth mAuth;
         private final int REQ_ADD_STUDENTE = 1;
         private final int REQ_EDIT_STUDENTE = 2;
         private String matricolaCorrente;
@@ -111,9 +113,10 @@ public class MainActivity extends AppCompatActivity   {
             case R.id.menuLog:
                 // L'utente ha scelto "logout"
                 Log.v(TAG, "Menu-> Log-out");
+                mAuth.signOut();
 
-                Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
-                startActivityForResult(intent, 3);
+                Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+                startActivity(intent);
 
 
                 return true;
@@ -123,6 +126,8 @@ public class MainActivity extends AppCompatActivity   {
                 return super.onOptionsItemSelected(item);
         }
     }
+
+
 
 
     // Processo dei valori di ritorno dalle altre activiy
