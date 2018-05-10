@@ -96,4 +96,6 @@
     <string name="TVConnect">Connetti il dispositivo</string>
     <string name="Rx">RX</string>
     <string name="STAT">Status:</string>
+    <string name="nameRoom">Stanza:</string>
+    <string name="ID">ID:</string>
 </resources>

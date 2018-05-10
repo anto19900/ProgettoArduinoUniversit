@@ -17,6 +17,8 @@ public class DettaglioStanzaActivity extends AppCompatActivity {
     Button bCasa1;
     Button bCasa2;
 
+
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dettaglio_stanza);
@@ -35,12 +37,6 @@ public class DettaglioStanzaActivity extends AppCompatActivity {
             vDispositivi2.setText(String.valueOf(stanza.getDispositivi()));
 
             //qui altre cose da passare tipo pulsante
-           bCasa1.setOnClickListener(new View.OnClickListener() {
-               @Override
-               public void onClick(View v) {
-
-               }
-           });
         }
 
     }

@@ -74,9 +74,9 @@ public class DataSource {
 
     // Popolo il data source con dati di prova
     private void popolaDataSource() {
-        elencoStanze.put("1", new Stanza("1", "casa al mare", 5));
-        elencoStanze.put("2", new Stanza("2", "casa in montagna", 5));
-        elencoStanze.put("3", new Stanza("3", "casa portici", 3));
-        elencoStanze.put("4", new Stanza("4", "casa caserta", 2));
+        elencoStanze.put("1", new Stanza("1", "Room 1", 5));
+        elencoStanze.put("2", new Stanza("2", "Room 2", 5));
+        elencoStanze.put("3", new Stanza("3", "Room 3", 3));
+        elencoStanze.put("4", new Stanza("4", "Room 4", 2));
     }
 }
