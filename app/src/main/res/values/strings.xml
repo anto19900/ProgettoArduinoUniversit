@@ -92,4 +92,6 @@
     <string name="invitation_deep_link">l\'invito non è andato a buon fine</string>
     <string name="invitation_customimage">immagine customizzata</string>
     <string name="invitation_cta">invitation cta</string>
+    <string name="Connect">Connetti</string>
+    <string name="TVConnect">Connetti il dispositivo</string>
 </resources>

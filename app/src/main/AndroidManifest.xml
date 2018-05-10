@@ -25,6 +25,7 @@
         <activity android:name=".EditStanzaActivity" />
         <activity android:name=".GraficiActivity" />
         <activity android:name=".ImpostazioniActivity" />
+        <activity android:name=".BluetoothActivity"/>
 
     </application>
 

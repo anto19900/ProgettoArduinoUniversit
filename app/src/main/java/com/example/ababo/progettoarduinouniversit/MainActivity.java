@@ -117,7 +117,13 @@ public class MainActivity extends AppCompatActivity   {
 
                 Intent intent = new Intent(MainActivity.this, LoginActivity.class);
                 startActivity(intent);
+                return true;
 
+            case R.id.menuConnetti:
+                // L'utente ha scelto "logout"
+                Log.v(TAG, "Menu-> Connetti");
+                Intent intent4 = new Intent(MainActivity.this, BluetoothActivity.class);
+                startActivity(intent4);
 
                 return true;
 
