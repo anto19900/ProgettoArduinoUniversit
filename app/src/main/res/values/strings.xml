@@ -94,4 +94,6 @@
     <string name="invitation_cta">invitation cta</string>
     <string name="Connect">Connetti</string>
     <string name="TVConnect">Connetti il dispositivo</string>
+    <string name="Rx">RX</string>
+    <string name="STAT">Status:</string>
 </resources>
