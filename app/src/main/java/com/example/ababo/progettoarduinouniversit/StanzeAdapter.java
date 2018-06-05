@@ -54,7 +54,7 @@ public class StanzeAdapter extends BaseAdapter {
         TextView vMatricola = view.findViewById(R.id.textMatricola);
         TextView vNomeCompleto = view.findViewById(R.id.textNome);
 
-        // Imposto i valori da visualizzare
+        // Imposto i valori da visualizzare nella list view
         Stanza s = elencoStanze.get(i);
         vMatricola.setText(s.getMatricola());
         vNomeCompleto.setText(s.getNome());

@@ -34,7 +34,7 @@ public class DataSource {
      */
     public void addStanza(Stanza stanza) {
 
-        elencoStanze.put(stanza.getNome(), stanza);
+        elencoStanze.put(stanza.getMatricola(), stanza);
     }
 
     /**
@@ -51,8 +51,8 @@ public class DataSource {
      * @param matricola matricola da cercare
      * @return Studente trovoto (null in caso contrario)
      */
-    public Stanza getStanza(String nome) {
-        return elencoStanze.get(nome);
+    public Stanza getStanza(String matricola) {
+        return elencoStanze.get(matricola);
     }
 
     /**
@@ -74,9 +74,9 @@ public class DataSource {
 
     // Popolo il data source con dati di prova
     private void popolaDataSource() {
-        elencoStanze.put("1", new Stanza("1", "al mare", 5));
-        elencoStanze.put("2", new Stanza("2", "in montagna", 5));
-        elencoStanze.put("3", new Stanza("3", "portici", 3));
-        elencoStanze.put("4", new Stanza("4", "caserta", 2));
+        elencoStanze.put("1", new Stanza("1", "Room 1", 5));
+        elencoStanze.put("2", new Stanza("2", "Room 2", 5));
+        elencoStanze.put("3", new Stanza("3", "Room 3", 3));
+        elencoStanze.put("4", new Stanza("4", "Room 4", 2));
     }
 }

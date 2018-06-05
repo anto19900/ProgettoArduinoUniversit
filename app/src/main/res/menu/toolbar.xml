@@ -3,8 +3,11 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
+        android:id="@+id/menuConnetti"
+        android:title="@string/Connect" />
+    <item
         android:id="@+id/menuLog"
-        android:title="Log-in" />
+        android:title="Log-out" />
     <item
         android:id="@+id/menuImpostazioni"
         android:title="Impostazioni" />
