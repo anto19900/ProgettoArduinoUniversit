@@ -89,12 +89,7 @@ public class DettaglioStanzaActivity extends AppCompatActivity {
             //qui altre cose da passare tipo pulsante
         }
 
-        @Override
-        public void onStart() {
-            super.onStart();
-            // Check if user is signed in (non-null) and update UI accordingly.
-            mBTSocket.connect();
-        }
+
 
         //istruzioni per pilotare i bottoni delle stanze
         bCasa1.setOnClickListener(new View.OnClickListener() {
@@ -191,6 +186,7 @@ public class DettaglioStanzaActivity extends AppCompatActivity {
             });
         }
     }
+
 
     private void bluetoothOn(View view){
         if (!mBTAdapter.isEnabled()) {
