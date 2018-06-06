@@ -1,11 +1,16 @@
 package com.example.ababo.progettoarduinouniversit.datamodel;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 import java.util.ArrayList;
 import java.util.Hashtable;
 import java.util.List;
 import java.util.Map;
 
 public class DataSource {
+    FirebaseDatabase database = FirebaseDatabase.getInstance();
+    DatabaseReference myRef = database.getReference("Stanze");
     // Lista locale per simulare una ipotetica sorgente dati
     private Hashtable<String, Stanza> elencoStanze;
 
@@ -35,6 +40,8 @@ public class DataSource {
     public void addStanza(Stanza stanza) {
 
         elencoStanze.put(stanza.getMatricola(), stanza);
+        myRef.child(stanza.getMatricola()).setValue(stanza);
+
     }
 
     /**
@@ -43,7 +50,7 @@ public class DataSource {
      */
     public void deleteStanza(String matricola) {
         elencoStanze.remove(matricola);
-
+        myRef.child(matricola).removeValue();
     }
 
     /**

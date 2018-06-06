@@ -53,7 +53,7 @@ public class DettaglioStanzaActivity extends AppCompatActivity {
 
     private final String TAG = MainActivity.class.getSimpleName();
     private Handler mHandler; // Our main handler that will receive callback notifications
-    private ConnectedThread mConnectedThread; // bluetooth background worker thread to send and receive data
+    private static ConnectedThread mConnectedThread; // bluetooth background worker thread to send and receive data
     private BluetoothSocket mBTSocket = null; // bi-directional client-to-client data path
 
     private static final UUID BTMODULEUUID = UUID.fromString("00001101-0000-1000-8000-00805F9B34FB"); // "random" unique identifier

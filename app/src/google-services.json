@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "1001077589745",
+    "firebase_url": "https://progettoarduinouniversit.firebaseio.com",
+    "project_id": "progettoarduinouniversit",
+    "storage_bucket": "progettoarduinouniversit.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1001077589745:android:415704f4793f544a",
+        "android_client_info": {
+          "package_name": "com.example.ababo.progettoarduinouniversit"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1001077589745-rgrov6k4u12pnd5l0d3i9nijk3cm31ai.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.ababo.progettoarduinouniversit",
+            "certificate_hash": "c74022bee9ee2a4d46f63fef595201e122e686cf"
+          }
+        },
+        {
+          "client_id": "1001077589745-8g572s3evrvgs9vu5bkkp79n90romall.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC354rT_pSu95XrqF9trDDYTPz_UG90q74"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1001077589745-8g572s3evrvgs9vu5bkkp79n90romall.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
