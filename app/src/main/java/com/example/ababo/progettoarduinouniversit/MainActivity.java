@@ -21,10 +21,12 @@ import com.example.ababo.progettoarduinouniversit.datamodel.DataSource;
 import com.example.ababo.progettoarduinouniversit.datamodel.Stanza;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class MainActivity extends AppCompatActivity   {
 
-
+    FirebaseClient firebaseClient;
     private static final String TAG = "Lista stanze";
     // Riferimenti alle view
         private ListView vListaStanze;
@@ -48,6 +50,7 @@ public class MainActivity extends AppCompatActivity   {
             vListaStanze = findViewById(R.id.listaStanze);
             Toolbar toolbar = findViewById(R.id.toolbar);
 
+          firebaseClient.refreshdata();
 
             setSupportActionBar(toolbar);
 
