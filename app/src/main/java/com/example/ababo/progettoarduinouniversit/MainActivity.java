@@ -104,12 +104,6 @@ public class MainActivity extends AppCompatActivity   {
                 startActivity(intent2);
                 return true;
 
-            case R.id.menuImpostazioni:
-                // L'utente ha scelto "logout"
-                Log.v(TAG, "Menu-> impostazioni");
-                Intent intent3 = new Intent(MainActivity.this,ImpostazioniActivity.class);
-                startActivity(intent3);
-                return true;
 
             case R.id.menuLog:
                 // L'utente ha scelto "logout"
@@ -119,13 +113,6 @@ public class MainActivity extends AppCompatActivity   {
                 startActivity(intent);
                 return true;
 
-            case R.id.menuConnetti:
-                // L'utente ha scelto "logout"
-                Log.v(TAG, "Menu-> Connetti");
-                Intent intent4 = new Intent(MainActivity.this, DettaglioStanzaActivity.class);
-                startActivity(intent4);
-
-                return true;
 
             default:
                 // Scelta non riconosciuta, passo il controllo al metodo della classe base
