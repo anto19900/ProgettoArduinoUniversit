@@ -211,15 +211,6 @@ public class MainActivity extends AppCompatActivity   {
                    // adapter.setElencoStanze(dataSource.getElencoStanze(""));
                     return true;
 
-                case R.id.modificamMenu:
-                    // Modifica studente. Chiedo lo studente all'adapter e lo passo all'altra activiy
-                    Stanza stanza = adapter.getItem(info.position);
-                     matricolaCorrente = stanza.getMatricola();    // Salvo la matricola per poterla eventualmente modificare
-                    Intent intent = new Intent(getApplicationContext(), EditStanzaActivity.class);
-                     intent.putExtra(EXTRA_STUDENTE, stanza );
-                    // Faccio partire l'activiy in modalità edit
-                    startActivityForResult(intent, REQ_EDIT_STUDENTE);
-                    return true;
 
                 default:
                     return super.onContextItemSelected(item);
