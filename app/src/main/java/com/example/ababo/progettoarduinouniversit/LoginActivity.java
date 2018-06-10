@@ -37,6 +37,7 @@ public class LoginActivity extends BaseActivity implements
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         Toolbar toolbar2 = findViewById(R.id.toolbar2);
@@ -64,6 +65,7 @@ public class LoginActivity extends BaseActivity implements
     @Override
     public void onStart() {
         super.onStart();
+
         // Check if user is signed in (non-null) and update UI accordingly.
          currentUser = mAuth.getCurrentUser();
         updateUI(currentUser);

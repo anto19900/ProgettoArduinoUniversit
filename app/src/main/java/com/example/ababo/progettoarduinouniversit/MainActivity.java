@@ -28,7 +28,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 
 public class MainActivity extends AppCompatActivity   {
-
+   FirebaseAuth mAuth;
     private static final String TAG = "Lista stanze";
     // Riferimenti alle view
         private ListView vListaStanze;
@@ -92,18 +92,9 @@ public class MainActivity extends AppCompatActivity   {
                 registerForContextMenu(vListaStanze);
              adapter.refreshdata();
         }
-    public void onStart() {
-        // Abilito la ricezione delle notifiche sull'aggiornamento dei dati
 
-        super.onStart();
-    }
 
-    @Override
-    public void onStop() {
-        // Disabilito le notifiche
 
-        super.onStop();
-    }
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.toolbar, menu);
         return super.onCreateOptionsMenu(menu);
@@ -122,14 +113,14 @@ public class MainActivity extends AppCompatActivity   {
 
 
             case R.id.menuLog:
-                // L'utente ha scelto "logout"
-                Log.v(TAG, "Menu-> Log-out");
 
+                mAuth=FirebaseAuth.getInstance();
+                // Firebase sign out
+                mAuth.signOut();
 
+            Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+            startActivity(intent);
 
-                Intent intent = new Intent(MainActivity.this, LoginActivity.class);
-               //loginActivity.signOut();
-                startActivity(intent);
                 return true;
 
 
