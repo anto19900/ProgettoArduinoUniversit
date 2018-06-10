@@ -20,7 +20,7 @@ public class DataSource {
     // Costruttore privato
     private DataSource() {
         elencoStanze = new Hashtable<>();
-        popolaDataSource();
+       // popolaDataSource();
     }
 
     /**
@@ -39,7 +39,7 @@ public class DataSource {
      */
     public void addStanza(Stanza stanza) {
 
-        elencoStanze.put(stanza.getMatricola(), stanza);
+       // elencoStanze.put(stanza.getMatricola(), stanza);
         myRef.child(stanza.getMatricola()).setValue(stanza);
 
     }
@@ -49,7 +49,7 @@ public class DataSource {
      * @param matricola matricola da eliminare
      */
     public void deleteStanza(String matricola) {
-        elencoStanze.remove(matricola);
+        //elencoStanze.remove(matricola);
         myRef.child(matricola).removeValue();
     }
 

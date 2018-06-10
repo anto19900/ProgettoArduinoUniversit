@@ -1,6 +1,8 @@
 package com.example.ababo.progettoarduinouniversit;
 
 import android.content.Intent;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -21,10 +23,12 @@ import com.example.ababo.progettoarduinouniversit.datamodel.DataSource;
 import com.example.ababo.progettoarduinouniversit.datamodel.Stanza;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 
 public class MainActivity extends AppCompatActivity   {
-
-
+   FirebaseAuth mAuth;
     private static final String TAG = "Lista stanze";
     // Riferimenti alle view
         private ListView vListaStanze;
@@ -86,7 +90,10 @@ public class MainActivity extends AppCompatActivity   {
             });
 
                 registerForContextMenu(vListaStanze);
+             adapter.refreshdata();
         }
+
+
 
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.toolbar, menu);
@@ -104,28 +111,18 @@ public class MainActivity extends AppCompatActivity   {
                 startActivity(intent2);
                 return true;
 
-            case R.id.menuImpostazioni:
-                // L'utente ha scelto "logout"
-                Log.v(TAG, "Menu-> impostazioni");
-                Intent intent3 = new Intent(MainActivity.this,ImpostazioniActivity.class);
-                startActivity(intent3);
-                return true;
 
             case R.id.menuLog:
-                // L'utente ha scelto "logout"
-                Log.v(TAG, "Menu-> Log-out");
 
-                Intent intent = new Intent(MainActivity.this, LoginActivity.class);
-                startActivity(intent);
-                return true;
+                mAuth=FirebaseAuth.getInstance();
+                // Firebase sign out
+                mAuth.signOut();
 
-            case R.id.menuConnetti:
-                // L'utente ha scelto "logout"
-                Log.v(TAG, "Menu-> Connetti");
-                Intent intent4 = new Intent(MainActivity.this, DettaglioStanzaActivity.class);
-                startActivity(intent4);
+            Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+            startActivity(intent);
 
                 return true;
+
 
             default:
                 // Scelta non riconosciuta, passo il controllo al metodo della classe base
@@ -150,8 +147,10 @@ public class MainActivity extends AppCompatActivity   {
                     if (stanza != null) {
                         // Aggiungo lo studente al datasource
                         dataSource.addStanza(stanza);
+                      adapter.notifyDataSetChanged();
                         // Imposto il nuovo set di dati
-                        adapter.setElencoStanze(dataSource.getElencoStanze(""));
+                        //adapter.refreshdata();
+                       // adapter.setElencoStanze(dataSource.getElencoStanze(""));
                     }
                 }
                 break;
@@ -164,10 +163,12 @@ public class MainActivity extends AppCompatActivity   {
 
                     if (stanza != null) {
                         // Sostituisco lo studente nel datasource
-                        dataSource.deleteStanza(matricolaCorrente);
-                        dataSource.addStanza(stanza);
+                         dataSource.deleteStanza(matricolaCorrente);
+                       dataSource.addStanza(stanza);
                         // Imposto il nuovo set di dati
-                        adapter.setElencoStanze(dataSource.getElencoStanze(""));
+                        adapter.notifyDataSetChanged();
+                        //adapter.refreshdata();
+                        //adapter.setElencoStanze(dataSource.getElencoStanze(""));
                     }
                 }
                 break;
@@ -197,24 +198,17 @@ public class MainActivity extends AppCompatActivity   {
                 case R.id.eliminaMenu:
                     // Eliminazione studente
                   dataSource.deleteStanza(adapter.getItem(info.position).getMatricola());
-                    adapter.setElencoStanze(dataSource.getElencoStanze(""));
+                  adapter.refreshdata();
+                   // adapter.setElencoStanze(dataSource.getElencoStanze(""));
                     return true;
 
-                case R.id.modificamMenu:
-                    // Modifica studente. Chiedo lo studente all'adapter e lo passo all'altra activiy
-                    Stanza stanza = adapter.getItem(info.position);
-                     matricolaCorrente = stanza.getMatricola();    // Salvo la matricola per poterla eventualmente modificare
-                    Intent intent = new Intent(getApplicationContext(), EditStanzaActivity.class);
-                     intent.putExtra(EXTRA_STUDENTE, stanza );
-                    // Faccio partire l'activiy in modalità edit
-                    startActivityForResult(intent, REQ_EDIT_STUDENTE);
-                    return true;
 
                 default:
                     return super.onContextItemSelected(item);
             }
 
         }
+
     }
     
 

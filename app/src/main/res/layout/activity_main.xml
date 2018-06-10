@@ -9,7 +9,7 @@
     <ListView
         android:id="@+id/listaStanze"
 
-        style="@style/Widget.AppCompat.Light.ListView.DropDown"
+        style="@android:style/Widget.Material.ExpandableListView"
         android:layout_width="match_parent"
         android:layout_height="544dp"
         android:longClickable="true"
