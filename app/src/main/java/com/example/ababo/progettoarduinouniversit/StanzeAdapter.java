@@ -89,7 +89,7 @@ public class StanzeAdapter extends BaseAdapter {
                 sa.setMatricola(dataSnapshot.child("matricola").getValue().toString());
                 sa.setDispositivi(dataSnapshot.child("dispositivi").getValue().hashCode());
                 elencoStanze.add(sa);
-                System.out.println(sa.getNome());
+
                 notifyDataSetChanged();
             }
 
