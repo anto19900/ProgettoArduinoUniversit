@@ -7,6 +7,7 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.widget.Toast;
 
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
@@ -17,7 +18,10 @@ import com.google.firebase.database.ValueEventListener;
 import com.jjoe64.graphview.GraphView;
 import com.jjoe64.graphview.Viewport;
 import com.jjoe64.graphview.series.DataPoint;
+import com.jjoe64.graphview.series.DataPointInterface;
 import com.jjoe64.graphview.series.LineGraphSeries;
+import com.jjoe64.graphview.series.OnDataPointTapListener;
+import com.jjoe64.graphview.series.Series;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,21 +33,29 @@ public class GraficiActivity extends AppCompatActivity {
     Integer vettore [] = new Integer[5];
     private LineGraphSeries<DataPoint> series;
 
-    private int lastX = 0;
+    private int lastX = 1;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_grafici);
         GraphView graph = (GraphView) findViewById(R.id.grafico);
         series = new LineGraphSeries<DataPoint>();
+        series.setAnimated(true);
+        series.setDrawDataPoints(true);
+        series.setThickness(10);
+        series.setTitle("Temperatura casa");
         graph.addSeries(series);
 
         Toolbar toolbar3 = findViewById(R.id.toolbar3);
         setSupportActionBar(toolbar3);
         Viewport viewport = graph.getViewport();
         viewport.setYAxisBoundsManual(true);
+
         viewport.setMinY(0);
         viewport.setMaxY(40);
         viewport.setScrollable(true);
+
+
+
      myRef.addChildEventListener(new ChildEventListener() {
          int i = 0;
          @Override
