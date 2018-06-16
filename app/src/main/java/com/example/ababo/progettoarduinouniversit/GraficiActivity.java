@@ -28,7 +28,7 @@ public class GraficiActivity extends AppCompatActivity {
     DatabaseReference myRef = database.getReference("Temperatura");
     Integer vettore [] = new Integer[5];
     private LineGraphSeries<DataPoint> series;
-    private static final Random RANDOM = new Random();
+
     private int lastX = 0;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

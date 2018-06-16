@@ -68,17 +68,21 @@ public class DettaglioStanzaActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_dettaglio_stanza);
 
-
+        Intent intent = getIntent();
+        final Stanza stanza = (Stanza)intent.getSerializableExtra("stanza");
+        if(stanza.getDispositivi() == 1)
+            setContentView(R.layout.activity_dettaglio_stanza);
+        if ( stanza.getDispositivi() >= 2)
+            setContentView(R.layout.activity_dettaglio_stanza2);
 
         vCasa = findViewById(R.id.tCasaSpecifica);
         bCasa1 = findViewById(R.id.buttonCasa1);
         bCasa2 = findViewById(R.id.buttonCasa2);
+         Button bCasa3 = findViewById(R.id.button3);
+        Button bCasa4 = findViewById(R.id.button4);
         TextView vDispositivi2 = findViewById(R.id.tDispositivi);
         TextView tMatricola = findViewById(R.id.tMatricolaDettaglio);
-        Intent intent = getIntent();
-        final Stanza stanza = (Stanza)intent.getSerializableExtra("stanza");
         Toolbar toolbar3 = findViewById(R.id.toolbar8);
         setSupportActionBar(toolbar3);
         if (stanza != null) {
@@ -95,7 +99,7 @@ public class DettaglioStanzaActivity extends AppCompatActivity {
         bCasa1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(mConnectedThread!=null) {
+                if(mConnectedThread != null) {
                     mConnectedThread.write(stanza.getMatricola() + "0");
                 }
             }
@@ -103,12 +107,32 @@ public class DettaglioStanzaActivity extends AppCompatActivity {
         bCasa2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(mConnectedThread!=null) {
+                if(mConnectedThread != null) {
                     mConnectedThread.write(stanza.getMatricola() + "1");
                 }
+
             }
         });
+        if( stanza.getDispositivi() >= 2) {
+            bCasa3.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (mConnectedThread != null) {
+                        mConnectedThread.write(stanza.getMatricola() + "2");
+                    }
 
+                }
+            });
+            bCasa4.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (mConnectedThread != null) {
+                        mConnectedThread.write(stanza.getMatricola() + "3");
+                    }
+
+                }
+            });
+        }
 
         mBluetoothStatus = (TextView)findViewById(R.id.bluetoothStatus);
         mReadBuffer = (TextView) findViewById(R.id.readBuffer);
