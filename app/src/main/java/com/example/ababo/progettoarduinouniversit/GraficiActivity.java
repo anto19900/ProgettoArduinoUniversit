@@ -91,7 +91,12 @@ public class GraficiActivity extends AppCompatActivity {
          }
      });
 
-
+         series.setOnDataPointTapListener(new OnDataPointTapListener() {
+             @Override
+             public void onTap(Series series, DataPointInterface dataPoint) {
+                 Toast.makeText(getApplicationContext(), "Il dato cliccato è :"+dataPoint,Toast.LENGTH_SHORT).show();
+             }
+         });
 
 
 
