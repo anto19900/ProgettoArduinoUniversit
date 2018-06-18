@@ -104,6 +104,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Nome stanza"
+        android:textColor="@android:color/black"
         app:layout_constraintBottom_toTopOf="@+id/textView4"
         app:layout_constraintEnd_toStartOf="@+id/tCasaSpecifica"
         app:layout_constraintHorizontal_bias="0.5"
@@ -112,6 +113,7 @@
 
     <TextView
         android:id="@+id/textView4"
+        android:textColor="@android:color/black"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="ID stanza"
@@ -123,6 +125,7 @@
 
     <TextView
         android:id="@+id/textView7"
+        android:textColor="@android:color/black"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Numero dispositivi"
@@ -136,6 +139,7 @@
         android:id="@+id/tCasaSpecifica"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="@android:color/black"
         android:text="TextView"
         app:layout_constraintBottom_toTopOf="@+id/tMatricolaDettaglio"
         app:layout_constraintEnd_toEndOf="parent"
@@ -147,6 +151,7 @@
         android:id="@+id/tMatricolaDettaglio"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="@android:color/black"
         android:text="TextView"
         app:layout_constraintBottom_toTopOf="@+id/tDispositivi"
         app:layout_constraintEnd_toEndOf="parent"
@@ -158,6 +163,7 @@
         android:id="@+id/tDispositivi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="@android:color/black"
         android:text="TextView"
         app:layout_constraintBottom_toTopOf="@+id/buttonCasa2"
         app:layout_constraintEnd_toEndOf="parent"

@@ -214,7 +214,7 @@ public class LoginActivity extends BaseActivity implements
         if (user != null) {
             mStatusTextView.setText(getString(R.string.common_google_play_services_enable_button,
                     user.getEmail(), user.isEmailVerified()));
-            mDetailTextView.setText(getString(R.string.common_signin_button_text_long, user.getUid()));
+            mDetailTextView.setText(getString(R.string.common_signin_button_text, user.getUid()));
 
             findViewById(R.id.email_password_buttons).setVisibility(View.GONE);
             findViewById(R.id.email_password_fields).setVisibility(View.GONE);
