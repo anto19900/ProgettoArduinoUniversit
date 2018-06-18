@@ -36,6 +36,7 @@
         android:layout_marginTop="17dp"
         android:text="Temperatura Casa"
         android:textAppearance="@android:style/TextAppearance.Material.Medium"
+        android:textColor="@android:color/black"
         app:layout_constraintBottom_toTopOf="@+id/grafico"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

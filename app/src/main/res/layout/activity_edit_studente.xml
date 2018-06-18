@@ -55,7 +55,9 @@
         android:layout_marginBottom="56dp"
         android:layout_marginEnd="94dp"
         android:layout_marginStart="50dp"
-        android:text="OK"
+        android:text="Aggiungi"
+        android:background="@color/colorPrimary"
+        android:textColor="@color/common_google_signin_btn_text_dark_default"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/bAnnulla"
         app:layout_constraintStart_toStartOf="parent" />
@@ -67,6 +69,8 @@
         android:layout_marginBottom="56dp"
         android:layout_marginStart="94dp"
         android:text="ANNULLA"
+        android:background="@color/colorPrimary"
+        android:textColor="@color/common_google_signin_btn_text_dark_default"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/bOk" />
     <android.support.v7.widget.Toolbar
